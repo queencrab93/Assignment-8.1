@@ -1,0 +1,31 @@
+import os  
+     
+dir = input("What is the directory you'd like to lookup and validate? ")
+   
+if os.path.isdir(dir):
+    print ("Good, we can write a file.")
+    filename = input("Enter a name for the file you want to make: ")
+    name = input("Enter your name: ")
+    address = input("Enter your address: ")
+    phone_number = input("Enter your phone number: ")
+    
+    writeFile = open(os.path.join(dir,filename),'w')
+   
+    writeFile.write(name+',' +address+',' +phone_number+'\n')
+
+    writeFile.close()
+    print("File information:")
+  
+    readFile = open(os.path.join(dir,filename),'r')
+
+for line in readFile:
+    print(line)
+    readFile.close()
+    again()
+else:
+    print("Sorry! That directory doesn't actually exist, let's make it.")
+    os.mkdir(dir)
+    again()
+    
+    # 1st issue the program doesnt run past input request for directory, why is that. 
+    # 2nd add in change dir line 29
