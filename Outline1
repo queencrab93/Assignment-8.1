@@ -1,0 +1,15 @@
+import os
+
+chosendirec=input("Please type the name of your chosen directory.")
+path=chosendirec
+if not os.path.exists('chosendirec'):
+    os.makedirs(path)
+
+chosenfilename=input("Please name the file you would like to save.")
+writedata=input("Please provide your name,address, and phone number separated by commas.")
+filename=chosenfilename
+f= open("filename", "w+")
+f.write('writedata')
+f.close
+contents=f.read(chosenfilename)
+
