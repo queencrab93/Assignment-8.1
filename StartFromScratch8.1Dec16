@@ -23,5 +23,7 @@ for line in readFile:
     readFile.close()
     again()
 else:
-    print("Sorry! That directory doesn't actually exist.")
+    print("Sorry! That directory doesn't actually exist, let's make it.")
+    os.mkdir(dir)
     again()
+    
